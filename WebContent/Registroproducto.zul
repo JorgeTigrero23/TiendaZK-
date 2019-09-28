@@ -1,0 +1,36 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Registro de Productos" border="normal" id="win_RegistroProducto" width="330px" height="220px"
+	apply="com.demo.control.ProductoControlador">
+	<grid>
+			<columns>
+				<column label="" width="40%"/>
+				<column label="" width="59%"/>
+			</columns>
+			<rows>
+				<row>
+					<label value="Codigo:"/>
+					<textbox id="txt_Codigo" readonly="true" disabled="true"/>
+				</row>
+				<row>
+					<label value="Nombre:" />
+					<textbox id="txt_Nombre"
+						constraint="no empty" />
+				</row>
+				<row>
+					<label value="Descripcion:" />
+					<textbox id="txt_Descripcion"
+						constraint="no empty" />
+				</row>
+				<row>
+					<label value="Precio:" />
+					<intbox id="txt_Precio" format=",###.#"
+						constraint="no empty, no negative" />
+				</row>
+			</rows>
+	</grid>	
+	<toolbar align="center">
+		<toolbarbutton label="Grabar" id="toolbarButtonGrabar" image="imagen/save24.png"/>
+	</toolbar>
+</window>
+</zk>

@@ -1,0 +1,49 @@
+<zk>
+	<window 
+		id="winListaProductos"
+		title="Lista de Clientes - MIX!!!" border="normal"
+		apply="com.demo.control.ListaProductos">
+
+
+		<toolbar>
+			<toolbarbutton label="Nuevo" id="toolbarButtonNuevo" image="imagen/new24.png"/>
+			<toolbarbutton label="Editar" id="toolbarButtonEditar" image="imagen/edit24.png"/>
+			<toolbarbutton label="Eliminar" id="toolbarButtonEliminar" image="imagen/delete24.png"/>
+		</toolbar>
+
+		<groupbox closable="true">
+			<label value="Nombre:  " />
+
+			<textbox id="textoBusquedaNombre"></textbox>
+			<space width="20px" />
+
+			<button image="imagenes/searchs.png" label="buscar"
+				id="buttonBuscar">
+			</button>
+
+		</groupbox>
+
+		<listbox mold="paging" pageSize="10" width="100%"
+			emptyMessage="No existen registros" id="listProductos">
+			<listhead sizable="true" menupopup="auto">
+				<listheader label="Codigo" />
+				<listheader label="Nombre" />
+				<listheader label="Descripción" />
+				<listheader label="Precio" />
+			</listhead>
+			<!--  template indica que los datos se cargaran desde un modelo de datos -->
+			<template name="model">
+				<listitem value="${each}">
+					<listcell label="${each.codigo}" />
+					<listcell label="${each.nombre }" />
+					<listcell label="${each.descripcion}" />
+					<listcell label="${each.precio }" />
+				</listitem>
+			</template>
+			<listitem>
+				<listcell label="" />
+				<listcell label="" />
+			</listitem>
+		</listbox>
+	</window>
+</zk>
